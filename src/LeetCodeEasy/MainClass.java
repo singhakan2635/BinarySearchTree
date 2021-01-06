@@ -24,5 +24,11 @@ public class MainClass
         CloestBinaryTreeValue cloestBinaryTreeValue = new CloestBinaryTreeValue();
         System.out.println(cloestBinaryTreeValue.closestValue(bst.root, 3.714286));
 
+        /** 653. Two Sum IV - Input is a BST */
+        Integer[] t3 = new Integer[]{2,1,3};
+        bst.root = bst.buildBst(t3);
+        TwoSuminBST twoSum = new TwoSuminBST();
+        System.out.println(twoSum.findTarget(bst.root, 4));
+
     }
 }
