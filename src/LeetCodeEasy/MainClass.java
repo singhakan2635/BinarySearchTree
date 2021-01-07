@@ -2,6 +2,8 @@ package LeetCodeEasy;
 
 import BSTBuilder.BuildBST;
 import BSTBuilder.TraversalDFS;
+import BSTBuilder.TreeNode;
+import LeetCodeMedium.ConvertBSTtoGreaterTree;
 
 public class MainClass
 {
@@ -29,6 +31,13 @@ public class MainClass
         bst.root = bst.buildBst(t3);
         TwoSuminBST twoSum = new TwoSuminBST();
         System.out.println(twoSum.findTarget(bst.root, 4));
+
+        /** 538. Convert BST to Greater Tree */
+        Integer[] t4 = new Integer[]{4,1,6,0,2,5,7,null,null,null,3,null,null,null,8};
+        bst.root = bst.buildBst(t4);
+        ConvertBSTtoGreaterTree convert = new ConvertBSTtoGreaterTree();
+        TreeNode root = convert.convertBST(bst.root);
+        dfs.inorder(root);
 
     }
 }
