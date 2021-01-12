@@ -56,5 +56,24 @@ public class ValidateBinarySearchTree
             return false;
         return helper(node.left,low,node.val) && helper(node.right,node.val,high);
     }
+    TreeNode prev=null;
+    public boolean isValidBST3(TreeNode root)
+    {
+        if(root==null)
+            return true;
+        return validBST(root);
+    }
+    private boolean validBST(TreeNode root)
+    {
+        if (root ==null)
+            return true;
+        boolean left = validBST(root.left);
+        if (prev!=null && prev.val>root.val)
+            return false;
+        prev = root;
+        boolean right = validBST(root.right);
+        return left && right;
+
+    }
 
 }
